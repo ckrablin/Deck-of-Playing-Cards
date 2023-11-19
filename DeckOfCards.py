@@ -20,32 +20,24 @@ class Deck:
 print("Welcome to the Card Game")
 print("There is a deck of 52 cards")
 
-
-# Create a deck
 deck = Deck()
-# Shuffle the deck
+
 deck.shuffle()
-# Deal a card
 
 NumberOfCards=int(input("how many cards do you want?"))
 DealtCards=[]
 for _ in range(NumberOfCards):
-  card = Deck.deal()
+  card = deck.deal()
   if card is not None:
-    DealtCards.append(f"{card.rank} of {card.suit}" )
+    DealtCards.append(card)
   else:
     print("There are no more cards in the deck")
 if DealtCards:
   print("Dealt Cards:")
   for card in DealtCards:
-    print(card
-        )
-   
+    print(card)
+
+remainingcount=deck.count()
+print(f"reamining cards: {remainingcount}")
+print("good luck")
 card = deck.deal()
-if card is not None:
-  print(f"Dealt card: {card}")
-else:
-  print("No more cards in the deck.")
-# Count the remaining cards
-count = deck.count()
-print(f"Remaining cards in the deck: {count}")
